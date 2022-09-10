@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mi primera pagina</h1>
+
+    <section>
+        <article>
+            <h2>Articulo 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae reprehenderit deleniti natus itaque illum dolorem reiciendis. Assumenda reiciendis nam eum quam ullam voluptatum, animi quaerat, atque consequatur blanditiis laboriosam recusandae.</p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora fugiat ratione magnam deserunt eveniet voluptate ducimus, hic rerum ut pariatur quas dolor doloremque voluptatibus dignissimos vel dolorem maxime atque! Hic?
+        </article>
+        <article>
+            <h3>Articulo 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam odit facere amet quasi aspernatur voluptate nobis libero velit! Soluta eligendi, iusto provident repellat modi eius. Aperiam possimus est dolorem cum.</p>
+            <figure>
+                <img src="html.png" alt="imagen ejemplo">
+            </figure>
+            <button> click</button>
+        </article>
+        <article>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad veniam odio voluptate inventore excepturi nemo dolores aperiam consequatur maxime laborum assumenda tempore voluptas praesentium velit aliquid iusto, architecto ab sit.
+        </article>
+        <article>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus deleniti velit perspiciatis, possimus provident ipsa enim. Voluptatum deserunt minima esse iste libero porro optio ut dolorem commodi, nisi dignissimos veniam!
+        </article>
+    </section>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nulla ab numquam iste molestiae eum veniam blanditiis, maxime ex totam molestias ea laudantium? Perspiciatis corporis quo quas esse ipsa similique?
+    </p>
+    <div style="border:1px blue solid">
+        <div>
+            <a href=""> cick</a>
+        </div>
+        <div>
+            <ul>
+                <li>Nombre</li>
+                <li>Apellido</li>
+            </ul>
+        </div>
+    </div>
+    <br><br><br><br>
+
+    <form action="" method="post">
+        <div>
+            <input type="text" placeholder="Nombre" disabled name="nombre" required>
+        </div>
+        <div>
+            <label for="">
+                Licencia
+                <input type="radio" name="licencia" id="" >
+            </label>
+        </div>
+        <div>
+            
+            <input type="number">
+        </div>
+        <div>
+            <input type="checkbox" name="" id="">
+        </div>
+        <div>
+            <input type="date">
+        </div>
+        <div>
+            <input type="email" name="" id="">
+        </div> 
+
+        <input type="submit" value="Guardar">
+    </form>
+    <br><br><br><br>
+
+    <footer>
+        <div>
+            <address>Calle 20</address>
+        </div>
+        <div>
+            <span>Telefono</span>
+            
+        </div>
+        <div>
+            redes sociales
+        </div>
+       
+    </footer>
+</body>
+<style>
+    
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    section{
+        display: flex;
+        flex-direction: row;
+    }
+    section > article{
+        border:1px red solid;
+        /* width: 50%; */
+    }
+    p{
+        text-align: center;
+    }
+    figure{
+        margin: 0;
+    }
+    img{
+        width: 100%;
+    }
+    footer{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        margin-top: 20px;
+    }
+    footer > div{
+        color: red;
+        text-align: center;
+        border: 1px blue solid;
+    }
+</style>
+</html>
