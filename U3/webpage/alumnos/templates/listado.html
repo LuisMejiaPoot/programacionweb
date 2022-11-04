@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nombre: {{nombre}}</h1>
+    <h2>Edad:{{edad}}</h2>
+    <h3>Localidad: {{localidad}}</h3>
+
+    {% if edad > 18 %}
+        <h5>Tu eres mayor de edad</h5>        
+    {% else %}
+        <h5 style="color:red">Tu no eres mayor de edad</h5>
+    {% endif %}
+{% comment %} 
+    {% for alumno in alumnos %}
+
+    {{alumno.nombre}} - {{alumno.apellidos}} - {{alumno.carrera}}  - {{alumno.semestre}}
+    <br>
+
+    {% endfor %} {% endcomment %}
+
+
+    <table>
+        <tr>
+            <td>nombre</td>
+            <td>apellidos</td>
+            <td>carrera</td>
+            <td>semestre</td>
+        </tr>
+        <tbody>
+            {% for alumno in alumnos %}
+                     <tr>
+                        <td>{{alumno.nombre}}</td>
+                        <td>{{alumno.apellidos}}</td>
+                        <td>{{alumno.carrera}}</td>
+                        <td>{{alumno.semestre}}</td>
+                     </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
