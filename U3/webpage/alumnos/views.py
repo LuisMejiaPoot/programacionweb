@@ -59,5 +59,23 @@ def alumnos(request):
 
 
 def ver_alumno(request, id):
-    
-    return render(request,"ver_alumno.html",{})
+
+    alumno = None
+    existe =  False
+    estatus =  None
+    try:
+        alumno = Alumnos.objects.get(id=id)
+        if(alumno.activo):
+            estatus  =  "activo"
+        else:
+            estatus =  "De baja"
+        existe = True
+    except:
+        existe = False
+    data = {
+        "alumno":alumno,
+        "existe":existe,
+        "id":id,
+        "estatus":estatus
+    }
+    return render(request,"ver_alumno.html",data)

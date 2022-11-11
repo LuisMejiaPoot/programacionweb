@@ -5,8 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Et sequi aliquam distinctio quae illo laborum expedita libero dolorum rerum hic corrupti iusto itaque sit odio, esse fuga nam qui veniam?
+    {% if existe%}
+     <div class="container mx-auto">
+        <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Nombre</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value="{{alumno.nombre}}">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Apellidos</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value="{{alumno.apellidos}}">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Matricula</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value="{{alumno.matricula}}">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Estatus</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value="{{estatus}}">
+            </div>
+
+          </form>
+     </div>
+    {% else %}
+        <h1 class="text-danger">No existe el alumno {{id}}</h1>
+    {% endif %}
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </html>
