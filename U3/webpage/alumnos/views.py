@@ -1,16 +1,20 @@
 
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
+from alumnos.models import *
 
-
-def index(request):
+def index(request,id):
     diccionary = {
         "alumno":{
             "nombre":"Carlos",
             "grupo":"A",
             "grado": 1
-        }
+        },
+        "blogs": id
     }
+    # data =  Blog(nombre="Blog 100",description ='Blog description 1', capacidad = 15 )
+    # data.save()
+
     return JsonResponse(diccionary)
     # return HttpResponse("Hola Django")
     # return  HttpResponse("Hola a todos")
@@ -40,11 +44,20 @@ def alumnos(request):
             "semestre": 2
         },
     ]
-    
+    # data =Blog.objects.filter(capacidad__gte=15)
+    alumnosDB  =  Alumnos.objects.all()
     datos = {
         "nombre":"Luis Mejia",
         "edad":edad,
         "localidad":localidad,
-        "alumnos":alumnos
+        "alumnos":alumnos,
+        "alumnosDB": alumnosDB  
     }
+
     return render(request,"listado.html",datos)
+
+
+
+def ver_alumno(request, id):
+    
+    return render(request,"ver_alumno.html",{})

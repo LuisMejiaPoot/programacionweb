@@ -1,49 +1,83 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Nombre: {{nombre}}</h1>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+  <body>
+
+
+    <!-- <h1>Nombre: {{nombre}}</h1>
     <h2>Edad:{{edad}}</h2>
     <h3>Localidad: {{localidad}}</h3>
 
     {% if edad > 18 %}
-        <h5>Tu eres mayor de edad</h5>        
+    <h5>Tu eres mayor de edad</h5>
     {% else %}
-        <h5 style="color:red">Tu no eres mayor de edad</h5>
-    {% endif %}
-{% comment %} 
-    {% for alumno in alumnos %}
-
-    {{alumno.nombre}} - {{alumno.apellidos}} - {{alumno.carrera}}  - {{alumno.semestre}}
-    <br>
+    <h5 style="color: red">Tu no eres mayor de edad</h5>
+    {% endif %} {% comment %} {% for alumno in alumnos %} {{alumno.nombre}} -
+    {{alumno.apellidos}} - {{alumno.carrera}} - {{alumno.semestre}}
+    <br />
 
     {% endfor %} {% endcomment %}
 
-
+    <a href="{%  url 'index' 1 %}">Index</a>
     <table>
+      <tr>
+        <td>nombre</td>
+        <td>apellidos</td>
+        <td>carrera</td>
+        <td>semestre</td>
+      </tr>
+      <tbody>
+        {% for alumno in alumnos %}
         <tr>
-            <td>nombre</td>
-            <td>apellidos</td>
-            <td>carrera</td>
-            <td>semestre</td>
+          <td>{{alumno.nombre}}</td>
+          <td>{{alumno.apellidos}}</td>
+          <td>{{alumno.carrera}}</td>
+          <td>{{alumno.semestre}}</td>
         </tr>
+        {% endfor %}
+      </tbody>
+    </table> -->
+    
+    <div class="container mx-auto">
+      <h1 class="text-center text-success">Alumnos Base de datos</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>nombre</th>
+            <th>apellidos</th>
+            <th>matricula</th>
+            <th>Activo</th>
+            <th>fecha</th>
+            <th></th>
+          </tr>
+        </thead>
         <tbody>
-            {% for alumno in alumnos %}
-                     <tr>
-                        <td>{{alumno.nombre}}</td>
-                        <td>{{alumno.apellidos}}</td>
-                        <td>{{alumno.carrera}}</td>
-                        <td>{{alumno.semestre}}</td>
-                     </tr>
-            {% endfor %}
+          {% for item in alumnosDB %}
+            <tr>
+              <td>{{item.nombre}}</td>
+              <td>{{item.apellidos}}</td>
+              <td>{{item.matricula}}</td>
+                {% if item.activo %}
+                  <td><span class="text-primary">Activo</span></td>
+                {% else %}
+                  <td><span class="text-danger">De baja</span></td>
+                {% endif %}
+              <td>{{item.created_at}}</td>
+              <td>
+                <a class="btn btn-link" href="ver_alumno/{{item.id}}">Ver alumno</a>
+              </td>
+            </tr>
+          {% endfor %}
         </tbody>
-    </table>
+      </table>
+    </div>
 
-</body>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </html>
