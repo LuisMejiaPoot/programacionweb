@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% if crear == 'creado' %}
+        <h3>Alumno guardado</h3>
+    {% endif %}
+    
+    {% if crear == 'no_creado' %}
+        <h3>Hubo un error</h3>
+    {% endif %}
+
+
+    <form action="{% url 'crearAlumno' %}" method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="">
+                Nombre del Alumno
+                <input type="text" required name="nombre_alumno">
+            </label>
+        </div>
+        <div>
+            <label for="">
+                Apellidos
+                <input type="text" required name="apellidos">
+            </label>
+        </div>
+        <div>
+            <label for="">
+                Matricula
+                <input type="text" required name="matricula" maxlength="11">
+            </label>
+        </div>
+
+        <div>
+            <label for="">
+                Estatus del alumno
+                <select name="activo" id="" required>
+                    <option value="0">Inactivo</option>
+                    <option value="1">Activo</option>
+                </select>
+            </label>
+        </div>
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+
+
+<script src="{% static 'app.js' %}"></script>  
+</html>

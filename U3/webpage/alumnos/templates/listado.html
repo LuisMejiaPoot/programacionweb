@@ -9,43 +9,13 @@
   </head>
   <body>
 
-
-    <!-- <h1>Nombre: {{nombre}}</h1>
-    <h2>Edad:{{edad}}</h2>
-    <h3>Localidad: {{localidad}}</h3>
-
-    {% if edad > 18 %}
-    <h5>Tu eres mayor de edad</h5>
-    {% else %}
-    <h5 style="color: red">Tu no eres mayor de edad</h5>
-    {% endif %} {% comment %} {% for alumno in alumnos %} {{alumno.nombre}} -
-    {{alumno.apellidos}} - {{alumno.carrera}} - {{alumno.semestre}}
-    <br />
-
-    {% endfor %} {% endcomment %}
-
-    <a href="{%  url 'index' 1 %}">Index</a>
-    <table>
-      <tr>
-        <td>nombre</td>
-        <td>apellidos</td>
-        <td>carrera</td>
-        <td>semestre</td>
-      </tr>
-      <tbody>
-        {% for alumno in alumnos %}
-        <tr>
-          <td>{{alumno.nombre}}</td>
-          <td>{{alumno.apellidos}}</td>
-          <td>{{alumno.carrera}}</td>
-          <td>{{alumno.semestre}}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table> -->
-    
     <div class="container mx-auto">
       <h1 class="text-center text-success">Alumnos Base de datos</h1>
+      <div class="d-flex justify-content-center align-items-center">
+
+        <a href="{% url 'formAlumno' %}" class="btn btn-lg  btn-primary">Crear </a>
+
+      </div>
       <table class="table table-striped">
         <thead>
           <tr>

@@ -10,27 +10,31 @@
 <body>
     {% if existe%}
      <div class="container mx-auto">
-        <form>
+        <form method="POST" action="{% url 'updateAlumno' %}">
+            {% csrf_token %}
             <div class="form-group">
               <label for="exampleFormControlInput1">Nombre</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value="{{alumno.nombre}}">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="nombre_alumno" value="{{alumno.nombre}}">
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlInput1">Apellidos</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value="{{alumno.apellidos}}">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="apellidos" value="{{alumno.apellidos}}">
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlInput1">Matricula</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value="{{alumno.matricula}}">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="matricula" value="{{alumno.matricula}}">
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlInput1">Estatus</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value="{{estatus}}">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="activo" value="{{estatus}}">
             </div>
 
+            <input type="hidden" name="id_alumno" value="{{id}}">
+            <br><br>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
           </form>
      </div>
     {% else %}
